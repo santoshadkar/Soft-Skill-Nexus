@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoftSkills Nexus - The Universal Soft Skills Development & Mastery Portal</title>
+  <meta name="description" content="An in-depth, single-stop portal for Soft Skills Development from school level to executive leadership, featuring 5 core skill pillars, 15-question diagnostic assessments, real-world case studies, career elevation roadmaps, roleplay simulators, books & video vault.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Global Navbar -->
+  <nav class="navbar">
+    <a href="#" class="brand">
+      <div class="brand-icon">🌱</div>
+      <div>SoftSkills<span class="highlight">Nexus</span></div>
+    </a>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="pathways">
+        <span>🧭</span> Stage Pathways
+      </button>
+      <button class="tab-btn" data-tab="matrix">
+        <span>🧩</span> Skill Matrix
+      </button>
+      <button class="tab-btn" data-tab="quiz">
+        <span>🎯</span> Diagnostic Quiz
+      </button>
+      <button class="tab-btn" data-tab="cases">
+        <span>📖</span> Case Studies
+      </button>
+      <button class="tab-btn" data-tab="roadmap">
+        <span>🚀</span> Elevation Roadmap
+      </button>
+      <button class="tab-btn" data-tab="simulator">
+        <span>🔥</span> Roleplay Simulator
+      </button>
+      <button class="tab-btn" data-tab="vault">
+        <span>📚</span> Books & Videos
+      </button>
+      <button class="tab-btn" data-tab="habits">
+        <span>⚡</span> Daily Micro-Habits
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="app-container">
+
+    <!-- 1. STAGE PATHWAYS TAB -->
+    <section id="tab-pathways" class="tab-content active">
+      <div class="hero-section">
+        <span class="badge" style="background: rgba(99,102,241,0.2); color: var(--primary); margin-bottom: 0.75rem;">
+          Universal Soft Skills Mastery & Elevation
+        </span>
+        <h1 class="hero-title">Elevate Your Soft Skills from <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">School to C-Suite</span></h1>
+        <p class="hero-subtitle">
+          Master the human abilities that AI cannot replace: empathetic communication, critical decision-making, executive influence, and personal resilience tailored to your exact career lifecycle stage.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\'quiz\']').click()">
+            🎯 Take 15-Point Diagnostic Quiz
+          </button>
+          <button class="btn btn-secondary" onclick="document.querySelector('[data-tab=\'cases\']').click()">
+            📖 Explore Real-World Case Studies ➔
+          </button>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h2 class="section-title">🎓 Choose Your Lifecycle Stage</h2>
+        <p class="section-desc">Select your current stage to explore curated soft skills, word-for-word conversation scripts, and action habits:</p>
+      </div>
+
+      <div id="pathway-selector-buttons" class="pathway-selector"></div>
+      <div id="pathway-content-display"></div>
+    </section>
+
+    <!-- 2. CORE SKILL MATRIX TAB -->
+    <section id="tab-matrix" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">🧩 5 Core Soft Skills Pillars</h2>
+        <p class="section-desc">In-depth breakdown of fundamental soft skill dimensions with dialogue scripts, body language cues, and common pitfalls.</p>
+        <div style="margin-top: 1rem; max-width: 400px;">
+          <input type="text" id="global-search-input" placeholder="🔍 Search framework or skill (e.g. STAR, SBI, EQ, SCARF)..." 
+            style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; font-family: inherit;">
+        </div>
+      </div>
+
+      <div id="pillars-grid" class="grid-3"></div>
+    </section>
+
+    <!-- 3. DIAGNOSTIC ASSESSMENT QUIZ TAB -->
+    <section id="tab-quiz" class="tab-content">
+      <div class="section-header" style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem auto;">
+        <h2 class="section-title" style="justify-content: center;">🎯 15-Point Soft Skill Diagnostic Assessment</h2>
+        <p class="section-desc">Evaluate your baseline proficiency across 3 scenarios per pillar (15 total questions) to receive a detailed mastery breakdown and growth roadmap.</p>
+      </div>
+
+      <div id="quiz-container"></div>
+    </section>
+
+    <!-- 4. REAL-WORLD CASE STUDIES VAULT TAB -->
+    <section id="tab-cases" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">📖 Real-World Case Studies & Guided Reflection</h2>
+        <p class="section-desc">Analyze complex organizational & interpersonal dilemmas, attempt reflection questions, and reveal expert model answers.</p>
+      </div>
+
+      <div id="case-selector-container" class="pathway-selector"></div>
+      <div id="case-display-box"></div>
+    </section>
+
+    <!-- 5. CAREER ELEVATION ROADMAP TAB -->
+    <section id="tab-roadmap" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">🚀 Career Elevation & Mastery Roadmap</h2>
+        <p class="section-desc">Map out what you can achieve at each milestone level, key enabling frameworks, and essential deliberate daily practices.</p>
+      </div>
+
+      <div id="roadmap-content-display"></div>
+    </section>
+
+    <!-- 6. ROLEPLAY SIMULATOR TAB -->
+    <section id="tab-simulator" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">🔥 Scenario Roleplay Simulator</h2>
+        <p class="section-desc">Test your interpersonal decision making in high-stakes professional & academic scenarios with instant expert breakdown.</p>
+      </div>
+
+      <div id="scenario-selector-container" class="pathway-selector"></div>
+      <div id="simulator-box"></div>
+    </section>
+
+    <!-- 7. BOOKS & VIDEO VAULT TAB -->
+    <section id="tab-vault" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">📚 Books & Video Learning Vault</h2>
+        <p class="section-desc">Synthesized insights from world-renowned bestsellers and high-impact TED talks on soft skill development.</p>
+      </div>
+
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--accent-amber); margin: 1.5rem 0 1rem 0;">📖 Essential Bestselling Books</h3>
+      <div id="books-grid" class="grid-2" style="margin-bottom: 3rem;"></div>
+
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--accent-cyan); margin: 2rem 0 1rem 0;">🎬 Masterclass Video Hub</h3>
+      <div id="videos-grid" class="grid-2"></div>
+    </section>
+
+    <!-- 8. DAILY MICRO-HABITS TAB -->
+    <section id="tab-habits" class="tab-content">
+      <div class="section-header">
+        <h2 class="section-title">⚡ Daily Micro-Habit Tracker & Scripts</h2>
+        <p class="section-desc">Build lasting soft skill muscle memory through small 1% incremental daily actions and copyable meeting templates.</p>
+      </div>
+
+      <div class="streak-card">
+        <div style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Current Daily Streak</div>
+        <div class="streak-number" id="streak-display-number">3 Days 🔥</div>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.2rem;">Complete all 5 micro-habits today to maintain your momentum!</p>
+      </div>
+
+      <div class="grid-2" style="align-items: start;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem;">✅ Daily Soft Skill Micro-Habits</h3>
+          <div id="habit-list-container"></div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem;">📄 Framework Scripts & Templates</h3>
+          <div id="templates-grid" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Modal Popup Overlay -->
+  <div id="global-modal-overlay" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="window.nexusApp.closeModal()">✕</button>
+      <h3 id="modal-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem;"></h3>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🌱 <strong>SoftSkills Nexus</strong> &copy; 2026. Designed for Lifelong Learners from School to Executive Leadership.</p>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/caseStudies.js"></script>
+  <script src="js/habitTracker.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

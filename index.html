@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SoftSkills Nexus - Universal Soft Skills Development & Mastery Portal</title>
-  <meta name="description" content="An in-depth, single-stop portal for Soft Skills Development from school level to executive leadership, featuring 5 core skill pillars, 15-question diagnostic assessments, real-world case studies, career elevation roadmaps, Live AI Assistant, roleplay hub, books & video vault.">
+  <meta name="description" content="An in-depth, single-stop portal for Soft Skills Development from school level to executive leadership, featuring 5 core skill pillars, stage pathways, 15-question diagnostic assessments, real-world case studies, career elevation roadmaps, Live AI Assistant, roleplay hub, books & video vault.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +69,7 @@
         </span>
         <h1 class="hero-title">The Human Advantage: Why Soft Skills Dictate <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">85% of Success</span> in the AI Era</h1>
         <p class="hero-subtitle">
-          Technical knowledge opens the door, but soft skills—empathy, active listening, conflict resolution, and executive presence—determine how high you rise from school K-12 to C-Suite leadership.
+          Technical capabilities open doors, but soft skills—empathy, active listening, conflict resolution, and executive influence—determine how high you rise from school K-12 to C-Suite leadership.
         </p>
         <div class="hero-actions">
           <button class="btn btn-primary" onclick="window.nexusApp.navigateToTab('quiz')">
@@ -111,63 +111,127 @@
         </div>
       </div>
 
-      <!-- WHY SOFT SKILLS MATTER ACROSS LIFE STAGES -->
+      <!-- FEATURED STAGE PATHWAYS SHOWCASE (NEWLY ADDED & PROMINENT) -->
       <div class="section-header">
-        <h2 class="section-title">🌱 Why Soft Skills Dictate Impact in Every Life Stage</h2>
-        <p class="section-desc">Discover how mastering human interaction transforms performance at every milestone:</p>
+        <h2 class="section-title">🧭 Stage-Based Soft Skill Pathways (School to Executive)</h2>
+        <p class="section-desc">Tailored learning tracks designed for every specific stage of your personal & professional lifecycle:</p>
       </div>
 
       <div class="grid-2" style="margin-bottom: 3.5rem;">
-        <div class="skill-list-item" style="border-left: 4px solid #3b82f6;">
-          <div class="card-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">🎒</div>
-          <div>
-            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">School & K-12 Foundation</h4>
-            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
-              Builds early confidence, active listening, homework focus routines, and growth mindset self-talk ('I haven't mastered this YET'). Prevents peer anxiety and bullying.
-            </p>
-            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
-              Explore School Track ➔
-            </button>
+        <!-- Pathway 1: School -->
+        <div class="card" style="border-top: 4px solid #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(18, 24, 38, 0.9));">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;">Stage 1</span>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Primary, Middle & High School</span>
           </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+            🎒 School & K-12 Foundation Pathway
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">
+            Building core interpersonal confidence, active listening, growth mindset self-talk ('Not YET'), time blocking, and peer support early in life.
+          </p>
+
+          <strong style="color: var(--text-main); font-size: 0.82rem; display: block; margin-bottom: 0.4rem;">Core Skills Taught:</strong>
+          <div class="tag-cloud" style="margin-bottom: 1.25rem;">
+            <span class="tag-item">Active Listening</span>
+            <span class="tag-item">Peer Support</span>
+            <span class="tag-item">Class Presentations</span>
+            <span class="tag-item">Time & Homework Blocking</span>
+            <span class="tag-item">Growth Mindset</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.9rem;"
+            onclick="window.nexusApp.switchPathway('school'); window.nexusApp.navigateToTab('pathways');">
+            Explore School Pathway ➔
+          </button>
         </div>
 
-        <div class="skill-list-item" style="border-left: 4px solid #8b5cf6;">
-          <div class="card-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">🎓</div>
-          <div>
-            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">University & College Scholars</h4>
-            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
-              Differentiates job candidates in interviews through STAR method storytelling, public speaking confidence, and value-first networking etiquette.
-            </p>
-            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
-              Explore College Track ➔
-            </button>
+        <!-- Pathway 2: College -->
+        <div class="card" style="border-top: 4px solid #8b5cf6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(18, 24, 38, 0.9));">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;">Stage 2</span>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Undergrads, Graduates & Job Seekers</span>
           </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+            🎓 University & College Scholars Pathway
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">
+            Preparing for career readiness: standing out in interviews with STAR storytelling, public speaking, networking etiquette, and critical synthesis.
+          </p>
+
+          <strong style="color: var(--text-main); font-size: 0.82rem; display: block; margin-bottom: 0.4rem;">Core Skills Taught:</strong>
+          <div class="tag-cloud" style="margin-bottom: 1.25rem;">
+            <span class="tag-item">STAR Method Interviewing</span>
+            <span class="tag-item">Public Speaking</span>
+            <span class="tag-item">LinkedIn & Cold Email Etiquette</span>
+            <span class="tag-item">Conflict Resolution</span>
+            <span class="tag-item">Critical Thinking</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.9rem;"
+            onclick="window.nexusApp.switchPathway('college'); window.nexusApp.navigateToTab('pathways');">
+            Explore College Pathway ➔
+          </button>
         </div>
 
-        <div class="skill-list-item" style="border-left: 4px solid #06b6d4;">
-          <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">💼</div>
-          <div>
-            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Early & Mid-Career Professionals</h4>
-            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
-              Accelerates promotion velocity through executive communication (BLUF), emotional self-regulation, SBI feedback loops, and cross-functional alignment.
-            </p>
-            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
-              Explore Professional Track ➔
-            </button>
+        <!-- Pathway 3: Early Professional -->
+        <div class="card" style="border-top: 4px solid #06b6d4; background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(18, 24, 38, 0.9));">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;">Stage 3</span>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Individual Contributors & Mid-Career</span>
           </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+            💼 Early to Mid-Career Professionals Pathway
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">
+            Maximizing organizational impact: executive brevity (BLUF), emotional self-regulation, non-defensive SBI feedback, and cross-functional alignment.
+          </p>
+
+          <strong style="color: var(--text-main); font-size: 0.82rem; display: block; margin-bottom: 0.4rem;">Core Skills Taught:</strong>
+          <div class="tag-cloud" style="margin-bottom: 1.25rem;">
+            <span class="tag-item">Executive Brevity (BLUF)</span>
+            <span class="tag-item">Emotional Intelligence (EQ)</span>
+            <span class="tag-item">SBI Feedback Loop</span>
+            <span class="tag-item">Stakeholder Alignment</span>
+            <span class="tag-item">Influence Without Authority</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.9rem;"
+            onclick="window.nexusApp.switchPathway('corporate-early'); window.nexusApp.navigateToTab('pathways');">
+            Explore Professional Pathway ➔
+          </button>
         </div>
 
-        <div class="skill-list-item" style="border-left: 4px solid #10b981;">
-          <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">👑</div>
-          <div>
-            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Corporate Leaders & Executives</h4>
-            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
-              Cultivates executive presence, GROW model mentorship, psychological safety, and authentic values-based leadership during organizational change.
-            </p>
-            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
-              Explore Executive Track ➔
-            </button>
+        <!-- Pathway 4: Leadership -->
+        <div class="card" style="border-top: 4px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(18, 24, 38, 0.9));">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">Stage 4</span>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Managers, VPs & C-Suite Executives</span>
           </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+            👑 Corporate Leaders & Executives Pathway
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">
+            Inspiring teams and driving transformation: executive presence & gravitas, GROW coaching, psychological safety, and crisis communication.
+          </p>
+
+          <strong style="color: var(--text-main); font-size: 0.82rem; display: block; margin-bottom: 0.4rem;">Core Skills Taught:</strong>
+          <div class="tag-cloud" style="margin-bottom: 1.25rem;">
+            <span class="tag-item">Executive Presence</span>
+            <span class="tag-item">GROW Model Coaching</span>
+            <span class="tag-item">Psychological Safety</span>
+            <span class="tag-item">Change Management</span>
+            <span class="tag-item">Crisis Decision Making</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.9rem;"
+            onclick="window.nexusApp.switchPathway('leadership'); window.nexusApp.navigateToTab('pathways');">
+            Explore Executive Pathway ➔
+          </button>
         </div>
       </div>
 

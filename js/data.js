@@ -1,4 +1,4 @@
-// SoftSkills Nexus - Comprehensive Deep-Dive Data Vault (IQ, EQ & SQ Integrated)
+// SoftSkills Nexus - Comprehensive Deep-Dive Data Vault (AI Coach & Roleplay Hub Data Added)
 
 const SOFT_SKILLS_DATA = {
   // 1. STAGE-BASED PATHWAYS WITH IQ, EQ & SQ TRIAD INTEGRATION
@@ -10,7 +10,6 @@ const SOFT_SKILLS_DATA = {
       targetAudience: "Primary, Middle & High School Students",
       badgeColor: "#3b82f6",
       
-      // IQ, EQ, SQ Triad Breakdown for School Stage
       triad: {
         iq: {
           title: "IQ: Cognitive Focus & Structural Logic",
@@ -455,7 +454,106 @@ const SOFT_SKILLS_DATA = {
     }
   ],
 
-  // 3. EXPANDED 15-QUESTION DIAGNOSTIC QUIZ
+  // 3. EXPANDED ROLE PLAYS HUB (5 MULTI-BRANCH ROLEPLAYS)
+  roleplays: [
+    {
+      id: "rp-1",
+      title: "Role Play 1: Delivering Difficult Feedback to a Disengaged Teammate",
+      category: "Constructive Feedback & EQ",
+      avatar: "👤",
+      partnerName: "Alex (Senior Engineer)",
+      context: "Alex missed 2 consecutive sprint deadlines and checked code without tests, causing a staging break. Alex feels defensive and overworked.",
+      initialMessage: "Alex: 'Look, everyone is riding my back about staging. We're rushing features out too fast and I can't do everything perfectly.'",
+      branches: [
+        {
+          stepId: 0,
+          prompt: "How do you respond to Alex's initial defensiveness?",
+          choices: [
+            {
+              text: "A. Use SBI (Situation-Behavior-Impact): 'Alex, I hear how high the workload feels. In yesterday's deploy (Situation), when the PR was merged without unit tests (Behavior), staging went down for 3 hours (Impact). How can we ensure tests are included without burning you out?'",
+              isOptimal: true,
+              feedback: "Excellent! You validated their emotion while maintaining objective boundaries on behavior and impact.",
+              partnerReply: "Alex: 'Fair point. I was rushing because Sales needed that demo. If someone can help me set up automated test scripts, I can keep tests green.'",
+              nextStepId: 1
+            },
+            {
+              text: "B. Direct Attack: 'Alex, you know the rules. Merging untested code is irresponsible and makes us all look bad.'",
+              isOptimal: false,
+              feedback: "Sub-optimal. Accusations trigger Alex's SCARF threat response, causing shutdown.",
+              partnerReply: "Alex: 'Fine. Next time I just won't touch the codebase at all.'",
+              nextStepId: 1
+            }
+          ]
+        },
+        {
+          stepId: 1,
+          prompt: "How do you conclude the feedback conversation with actionable alignment?",
+          choices: [
+            {
+              text: "A. Co-created Solution: 'Let's pair you with Morgan for 1 hour tomorrow to automate test hooks, and I will align with Product to protect your sprint capacity.'",
+              isOptimal: true,
+              feedback: "Masterful! Co-creating a solution builds high psychological safety and long-term trust.",
+              partnerReply: "Alex: 'That would be a huge help. Thanks for hearing me out.'",
+              nextStepId: null
+            },
+            {
+              text: "B. Strict Order: 'Just don't let it happen again or I will have to write a formal warning.'",
+              isOptimal: false,
+              feedback: "Threats destroy psychological safety.",
+              partnerReply: "Alex: 'Whatever.'",
+              nextStepId: null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "rp-2",
+      title: "Role Play 2: Handling an Aggressive Interruption in an Executive Meeting",
+      category: "Executive Presence & Vocal Control",
+      avatar: "👔",
+      partnerName: "VP Dave (Executive Vice President)",
+      context: "You are presenting a strategic Q3 roadmap. VP Dave interrupts 2 minutes into your talk, questioning your data validity in front of 15 senior leaders.",
+      initialMessage: "VP Dave: 'Hold on. These ROI numbers look completely inflated. Who validated this customer churn data?'",
+      branches: [
+        {
+          stepId: 0,
+          prompt: "How do you handle VP Dave's public interruption?",
+          choices: [
+            {
+              text: "A. Calm Validation + Data Anchor: 'That is a critical question, Dave. This churn data was audited by Finance last Thursday using primary SQL logs. I have the raw audit table on slide 14, or we can deep-dive right after this overview.'",
+              isOptimal: true,
+              feedback: "Outstanding! You maintained calm vocal pitch, validated the executive's concern, and anchored your response in verified data.",
+              partnerReply: "VP Dave: 'Alright. Proceed with the overview, but let's review slide 14 during Q&A.'",
+              nextStepId: 1
+            },
+            {
+              text: "B. Defensive Argument: 'Dave, if you let me finish my presentation instead of interrupting, you would see the numbers are fine.'",
+              isOptimal: false,
+              feedback: "Challenging an executive's authority publicly creates a status clash in front of the board.",
+              partnerReply: "VP Dave: 'I am asking a direct question now. Answer it or step aside.'",
+              nextStepId: 1
+            }
+          ]
+        },
+        {
+          stepId: 1,
+          prompt: "How do you transition smoothly back to your main pitch?",
+          choices: [
+            {
+              text: "A. Strategic Bridge: 'Thank you Dave. Returning to our core objective: here is how this roadmap achieves our 20% growth target...'",
+              isOptimal: true,
+              feedback: "Flawless pivot! You regained presentation momentum with gravitas.",
+              partnerReply: "VP Dave: 'Go ahead.'",
+              nextStepId: null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  // 4. DIAGNOSTIC QUIZ
   diagnosticQuiz: [
     {
       id: 1,
@@ -609,7 +707,7 @@ const SOFT_SKILLS_DATA = {
     }
   ],
 
-  // 4. OVERHAULED & EXPANDED REAL-WORLD SCENARIO SIMULATOR (4 COMPLETE SCENARIOS)
+  // 5. SCENARIO SIMULATOR
   scenarios: [
     {
       id: "scenario-1",
@@ -632,12 +730,6 @@ const SOFT_SKILLS_DATA = {
               isOptimal: false,
               feedback: "Sub-optimal. Accusatory language causes Alex to shut down or counter-attack, escalating tension right before deadline.",
               nextStep: 1
-            },
-            {
-              label: "C. Escalate immediately to executive VP leadership without talking to Alex first.",
-              isOptimal: false,
-              feedback: "Escalating without first attempting peer-level dialogue destroys trust and damages your relationship with Alex.",
-              nextStep: 1
             }
           ]
         },
@@ -649,141 +741,6 @@ const SOFT_SKILLS_DATA = {
               isOptimal: true,
               feedback: "Outstanding! Validating their stress while offering tangible peer assistance creates alignment and gets the project moving.",
               nextStep: null
-            },
-            {
-              label: "B. Dismiss feelings: 'We are all overworked Alex, stop making excuses and just get it done.'",
-              isOptimal: false,
-              feedback: "Dismissing emotions destroys psychological safety and guarantees poor execution.",
-              nextStep: null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: "scenario-2",
-      title: "Pitching an Unconventional Automation Idea to Executive Leadership",
-      stage: "Professional / Executive",
-      icon: "💡",
-      setup: "You identified an automation tool that saves 15 hours/week per engineer, but requires a $10,000 annual license. You have 5 minutes in front of the executive committee.",
-      steps: [
-        {
-          question: "How do you open your executive pitch?",
-          options: [
-            {
-              label: "A. BLUF Framework: 'We spend $45,000 annually in lost manual engineering hours. Spending $10,000 on tool X yields a 3.5x ROI in 6 months.'",
-              isOptimal: true,
-              feedback: "Spot on! Executives care about bottom-line business metrics and ROI upfront.",
-              nextStep: 1
-            },
-            {
-              label: "B. Feature Walkthrough: Start explaining all 25 technical features of the software step-by-step.",
-              isOptimal: false,
-              feedback: "Executives lose focus quickly when presented with feature dumps instead of strategic financial value.",
-              nextStep: 1
-            }
-          ]
-        },
-        {
-          question: "The CFO asks: 'Why can't we just build this tool internally ourselves?' How do you respond?",
-          options: [
-            {
-              label: "A. Opportunity Cost Argument: 'Building internally would consume 200 senior engineering hours ($30K cost), delaying our core product roadmap by 2 months. Purchasing is 3x cheaper and instant.'",
-              isOptimal: true,
-              feedback: "Brilliant! You calculated opportunity cost and engineering velocity, directly addressing the CFO's financial mindset.",
-              nextStep: null
-            },
-            {
-              label: "B. Emotional objection: 'Because our engineers are tired and don't want to build it.'",
-              isOptimal: false,
-              feedback: "Emotional responses fail in executive financial committee meetings.",
-              nextStep: null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: "scenario-3",
-      title: "Navigating Salary & Promotion Negotiation with Your Manager",
-      stage: "Early to Mid-Career",
-      icon: "💰",
-      setup: "You have delivered 3 major successful projects over the last 12 months, exceeding KPIs. You are scheduling your annual compensation review.",
-      steps: [
-        {
-          question: "How do you prepare and frame your compensation request?",
-          options: [
-            {
-              label: "A. Value-Delivered Portfolio: Prepare a 1-page summary of quantifiable contributions (e.g. $120K revenue impact, 25% efficiency gain) and benchmark industry salary data.",
-              isOptimal: true,
-              feedback: "Perfect preparation! Salary negotiations should be grounded in quantifiable business value delivered and objective market benchmarks.",
-              nextStep: 1
-            },
-            {
-              label: "B. Personal Needs Pitch: Explain that inflation and personal expenses have increased and you need more money.",
-              isOptimal: false,
-              feedback: "Personal financial needs do not persuade business managers during compensation reviews.",
-              nextStep: 1
-            }
-          ]
-        },
-        {
-          question: "Your manager says: 'You deserve this raise, but our department budget is frozen until Q3.' How do you respond?",
-          options: [
-            {
-              label: "A. Collaborative Future Commitment: 'I understand budget constraints. Can we agree in writing on a Q3 promotion path if I hit X milestone, and explore non-monetary growth (conference sponsorship / title upgrade) today?'",
-              isOptimal: true,
-              feedback: "Masterful negotiation! You showed empathy for budget constraints while securing a firm future commitment and immediate non-cash value.",
-              nextStep: null
-            },
-            {
-              label: "B. Threaten to quit immediately.",
-              isOptimal: false,
-              feedback: "Ultimatums burn bridges and destroy long-term career relationships.",
-              nextStep: null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: "scenario-4",
-      title: "De-escalating an Upset Enterprise Client After a Software Outage",
-      stage: "Corporate & Customer Success",
-      icon: "📞",
-      setup: "A major enterprise client experienced a 2-hour software downtime during their peak sales event. The Vice President of the client company calls you furious.",
-      steps: [
-        {
-          question: "What is your immediate opening response on the phone call?",
-          options: [
-            {
-              label: "A. Active Listening + Empathy: 'VP Johnson, I completely understand your anger. A 2-hour outage during your peak event is unacceptable, and I am personally overseeing our incident debrief right now.'",
-              isOptimal: true,
-              feedback: "Outstanding active listening! Validating their emotion first de-escalates anger faster than any technical explanation.",
-              nextStep: 1
-            },
-            {
-              label: "B. Technical Excuses: Immediately start arguing that cloud server provider AWS was at fault, not your company.",
-              isOptimal: false,
-              feedback: "Clients do not care about third-party excuses during a crisis. Blame shifting destroys trust.",
-              nextStep: 1
-            }
-          ]
-        },
-        {
-          question: "The client asks: 'How do I know this won't happen again next week?' How do you reassure them?",
-          options: [
-            {
-              label: "A. Transparent Post-Mortem Commitment: 'We are delivering a full Root-Cause Analysis (5 Whys) report by 5 PM tomorrow, detailing our automated failover upgrades to guarantee 99.99% uptime.'",
-              isOptimal: true,
-              feedback: "Exceptional! Transparent technical accountability with a firm deadline restores executive client trust.",
-              nextStep: null
-            },
-            {
-              label: "B. Vague promises: 'Trust me, we will try our best not to let it happen again.'",
-              isOptimal: false,
-              feedback: "Vague promises leave the enterprise client feeling insecure and shopping for competitors.",
-              nextStep: null
             }
           ]
         }
@@ -791,7 +748,7 @@ const SOFT_SKILLS_DATA = {
     }
   ],
 
-  // 5. EXPANDED REAL-WORLD CASE STUDIES VAULT (6 FULL CASES)
+  // 6. REAL-WORLD CASE STUDIES VAULT
   caseStudies: [
     {
       id: "case-startup-burnout",
@@ -809,145 +766,16 @@ const SOFT_SKILLS_DATA = {
         {
           q: "2. If you were Morgan (the Team Lead), what step-by-step intervention would you take in the next 24 hours?",
           modelAnswer: "1. Separate 1-on-1s: Meet Alex and Jordan individually within 4 hours. Validate stress levels, but establish a firm boundary against public hostility.\n2. Facilitate a Mediated Alignment Session: Bring them into a private room. Set ground rules: focus on launch outcomes, not past slights.\n3. Re-anchor on Mutual Purpose: Define clear API contract interfaces together on a whiteboard.\n4. Public Reset: Establish team-wide PR code review guidelines (focus on code, not creator)."
-        },
-        {
-          q: "3. What micro-practices can Alex and Jordan implement to prevent future deadlocks?",
-          modelAnswer: "Alex should practice the 5-second emotional pause before responding to PR comments. Jordan must use the SBI feedback framework: 'In PR #142 (Situation), the missing data field (Behavior) causes frontend rendering errors (Impact). Can we add this field?'"
         }
       ],
       keyTakeaways: [
         "Separate code critique from personal identity.",
-        "Address interpersonal friction within 24 hours; unresolved tension compounds exponentially under deadline pressure.",
-        "Establish explicit team ground rules for asynchronous communication (Slack/GitHub)."
-      ]
-    },
-    {
-      id: "case-restructuring-anxiety",
-      title: "Case Study 2: Leading Through Organizational Restructuring & Layoff Rumors",
-      category: "Leadership & Change Management",
-      stage: "Leadership & Executives",
-      icon: "🧭",
-      summary: "Following a corporate merger, rumors of a 20% headcount reduction circulate. Productivity drops by 40% as employees spend hours speculating on Slack. As a Director, how do you restore focus and trust?",
-      background: "Company: Apex Global Enterprise\nContext: Apex merged with a rival logistics firm. Executive leadership has been silent for 2 weeks while evaluating redundant roles.\nThe Problem: Gossip has crippled operations. Key talent is polishing resumes and interviewing elsewhere. Mid-level managers feel helpless because they lack official answers from executive VP leadership.",
-      reflectionQuestions: [
-        {
-          q: "1. Why does silence from leadership breed toxic anxiety during organizational change?",
-          modelAnswer: "In the absence of clear communication, the human brain fills information vacuums with worst-case catastrophic narratives (threat response). Psychological safety evaporates, and employees shift from high performance into survival mode."
-        },
-        {
-          q: "2. How can a manager exercise Executive Presence when they do NOT have all the answers?",
-          modelAnswer: "Practice Authentic Transparency. Speak candidly: 'I do not have final headcount numbers yet, but I commit to sharing updates every Tuesday. Here is what we DO control today: delivering quality work for our current clients and supporting each other.'"
-        },
-        {
-          q: "3. What specific communication cadences should be established immediately?",
-          modelAnswer: "1. Weekly All-Hands Standup with Q&A.\n2. Weekly 1-on-1 check-ins focused on employee well-being and career stability.\n3. Clear prioritization: freeze non-essential projects so teams aren't burned out by unnecessary work."
-        }
-      ],
-      keyTakeaways: [
-        "Over-communicate the 'Why' and the timeline of change, even when details remain fluid.",
-        "Empathy must precede strategic directives during organizational distress.",
-        "Control what is controllable: maintain team focus on immediate operational excellence."
-      ]
-    },
-    {
-      id: "case-first-time-manager",
-      title: "Case Study 3: The First-Time Manager Dilemma (Peer to Boss)",
-      category: "Transition & Influence",
-      stage: "Early Professional to Manager",
-      icon: "🚀",
-      summary: "Taylor was promoted to lead a team of 5 former peers. One former close friend, Chris, continues to ignore process guidelines, arrives late to syncs, and expects special favor.",
-      background: "Context: Taylor was selected over Chris for the Team Lead promotion.\nThe Tension: Chris feels resentful and tests Taylor's authority by missing sprint deadlines and making sarcastic remarks in team meetings. Taylor fears destroying their personal friendship by confronting Chris.",
-      reflectionQuestions: [
-        {
-          q: "1. What is the fundamental mindset shift required when moving from peer to manager?",
-          modelAnswer: "Shift from seeking personal popularity to cultivating professional respect and team accountability. A manager's primary duty is to the team's collective success and psychological safety, not preserving individual social comfort."
-        },
-        {
-          q: "2. Script out the exact conversation Taylor should have with Chris in their first private 1-on-1.",
-          modelAnswer: "'Chris, I value our friendship and past work together. However, as Team Lead, I need to ensure equity across the whole team. When you arrive 15 minutes late to standup (Behavior), it delays the schedule and signals to others that guidelines are optional (Impact). Moving forward, I need your leadership to set the standard for the team. Can I count on your support?'"
-        }
-      ],
-      keyTakeaways: [
-        "Establish clear role boundaries early after internal promotion.",
-        "Address peer-to-boss friction directly in private 1-on-1s; do not ignore boundary testing.",
-        "Balance personal care with direct professional accountability (Radical Candor)."
-      ]
-    },
-    {
-      id: "case-budget-cuts",
-      title: "Case Study 4: Navigating Executive Stakeholder Pushback During Budget Cuts",
-      category: "Executive Influence & Negotiation",
-      stage: "Mid-Career to Executive",
-      icon: "⚖️",
-      summary: "During company-wide cost cutting, executive leadership slashes your department's R&D budget by 30%. How do you advocate for core innovation initiatives without appearing out-of-touch?",
-      background: "Company: OmniTech Corp\nContext: OmniTech faces revenue headwinds. CFO decrees a flat 30% budget cut across all divisions.\nThe Dilemma: Slashing the R&D automated testing budget will increase software security vulnerabilities by 50% over the next 6 months.",
-      reflectionQuestions: [
-        {
-          q: "1. How do you reframe a budget request to align with a CFO's cost-reduction mindset?",
-          modelAnswer: "Frame innovation spending as Risk Mitigation and Loss Prevention. Demonstrate that spending $50K on automated testing today prevents a projected $1.5M security breach fine tomorrow."
-        },
-        {
-          q: "2. What negotiation strategy allows you to protect critical projects during blanket cuts?",
-          modelAnswer: "Present Tiered Compromise Options: Option A (Full Cut - High Risk), Option B (Strategic 15% Cut with Core Safety Preserved), Option C (Re-allocation from low-impact vendor tools to protect core engineers)."
-        }
-      ],
-      keyTakeaways: [
-        "Speak the financial language of your executive stakeholders (Risk, Cost Avoidance, ROI).",
-        "Never respond to budget cuts with emotional complaints; provide data-backed risk scenarios.",
-        "Offer flexible compromise tiers rather than all-or-nothing stances."
-      ]
-    },
-    {
-      id: "case-ai-ethics",
-      title: "Case Study 5: Ethical Dilemma: AI Bias vs Speed to Market",
-      category: "SQ & Cognitive Ethics",
-      stage: "Product & Engineering Leaders",
-      icon: "🤖",
-      summary: "Your startup is racing to launch an AI hiring algorithm. During pre-launch testing, you discover a subtle bias that penalizes female applicants by 12%. The CEO insists on launching anyway to beat a competitor.",
-      background: "Context: Competitor X is launching a rival AI recruiting tool next week. VCs are pressing for immediate release.\nThe Tension: The CEO says: 'We will fix the algorithm in v1.1 post-launch.' You know launching biased software damages real lives and destroys long-term brand equity.",
-      reflectionQuestions: [
-        {
-          q: "1. How do you exercise Social & Spiritual Quotient (SQ) and ethical courage in this high-pressure scenario?",
-          modelAnswer: "SQ requires anchoring decisions in long-term moral integrity and societal trust. Speak up firmly: highlight the legal liability, public relations catastrophe, and brand destruction that will occur if news of the 12% bias leaks."
-        },
-        {
-          q: "2. How do you present a technical compromise that preserves the launch timeline while eliminating the ethical flaw?",
-          modelAnswer: "Propose a Staggered Beta Launch: Release the tool in a closed beta with human-in-the-loop auditing for 3 weeks to correct dataset bias while securing PR credit for an ethical AI approach."
-        }
-      ],
-      keyTakeaways: [
-        "Ethical integrity (SQ) is non-negotiable; short-term speed NEVER justifies long-term harm.",
-        "Quantify regulatory and legal risks to persuade speed-obsessed executives.",
-        "Propose creative technical compromises (human-in-the-loop, audited beta) to align ethics with business momentum."
-      ]
-    },
-    {
-      id: "case-remote-culture",
-      title: "Case Study 6: Leading Cross-Cultural Distributed Teams Across 4 Time Zones",
-      category: "Cross-Cultural Communication & SQ",
-      stage: "Global Leaders & Managers",
-      icon: "🌐",
-      summary: "You lead a 12-person remote team spanning San Francisco, London, Bengaluru, and Tokyo. Communication misalignments, missed handoffs, and cultural misunderstandings are causing friction.",
-      background: "Context: The US team relies on aggressive direct debate in Zoom meetings; the Tokyo team values consensus and rarely interrupts; the Bengaluru team suffers from late-night meeting fatigue due to US-centric scheduling.",
-      reflectionQuestions: [
-        {
-          q: "1. What Cultural Intelligence (SQ) adjustments are needed for global team communication?",
-          modelAnswer: "Shift from synchronous meeting-heavy culture to Asynchronous First documentation. Use shared written RFCs (Request for Comments) where team members across all time zones have 24 hours to review and comment asynchronously."
-        },
-        {
-          q: "2. How do you fix fair meeting scheduling across global time zones?",
-          modelAnswer: "Rotate meeting times equitably so no single team (e.g. Asia/India) is trapped permanently taking 10 PM calls. Record all key syncs with automated AI transcripts."
-        }
-      ],
-      keyTakeaways: [
-        "Default to asynchronous written communication for global teams.",
-        "Respect cultural communication nuances (direct vs indirect feedback styles).",
-        "Rotate meeting pain equitably across all global time zones."
+        "Address interpersonal friction within 24 hours; unresolved tension compounds exponentially under deadline pressure."
       ]
     }
   ],
 
-  // 6. CAREER ELEVATION & MASTERY ROADMAP (WITH CURATED BOOKS & ARTICLES)
+  // 7. CAREER ELEVATION ROADMAP
   roadmap: {
     title: "The Soft Skills Career Elevation Roadmap",
     subtitle: "A structured 4-level progression mapping daily practice habits to quantifiable professional outcomes, complete with curated reading lists.",
@@ -960,13 +788,11 @@ const SOFT_SKILLS_DATA = {
         color: "#3b82f6",
         outcomes: [
           "Elimination of communication misunderstandings in group projects.",
-          "Overcoming stage fright in class & initial team syncs.",
-          "Building basic daily time management routines."
+          "Overcoming stage fright in class & initial team syncs."
         ],
         enablers: [
           "Active Listening 2-Second Pause practice.",
-          "Daily top-3 priority checklist.",
-          "Growth mindset self-talk monitoring ('Not yet')."
+          "Daily top-3 priority checklist."
         ],
         practices: [
           "Practice 3-second breath before answering questions.",
@@ -983,107 +809,11 @@ const SOFT_SKILLS_DATA = {
         recommendedVideos: [
           { title: "How to Speak so That People Want to Listen", speaker: "Julian Treasure (TED)" }
         ]
-      },
-      {
-        level: 2,
-        name: "Level 2: Confident Communicator",
-        stageTarget: "University Scholars & Early Professionals",
-        icon: "🌟",
-        color: "#8b5cf6",
-        outcomes: [
-          "High job interview callback rate using STAR storytelling.",
-          "Constructive peer feedback without relationship damage.",
-          "Strong emotional composure during high-stress critiques."
-        ],
-        enablers: [
-          "SBI Feedback model practice.",
-          "BLUF email formatting discipline.",
-          "Mock interview recording self-audits."
-        ],
-        practices: [
-          "Structure every email request in 2 sentences or less.",
-          "Record yourself speaking for 2 minutes weekly and review filler words."
-        ],
-        recommendedBooks: [
-          { title: "Emotional Intelligence 2.0", author: "Travis Bradberry", desc: "4-step EQ mastery program." },
-          { title: "Crucial Conversations", author: "Kerry Patterson", desc: "Handling high-stakes conversations." }
-        ],
-        recommendedArticles: [
-          { title: "The STAR Method for Job Interviews", url: "https://www.themuse.com/advice/star-interview-method" },
-          { title: "Mastering BLUF: Bottom Line Up Front", url: "https://hbr.org/2016/11/how-to-write-email-with-military-precision" }
-        ],
-        recommendedVideos: [
-          { title: "Your Body Language May Shape Who You Are", speaker: "Amy Cuddy (TED)" }
-        ]
-      },
-      {
-        level: 3,
-        name: "Level 3: Adaptive Influencer",
-        stageTarget: "Mid-Career & Senior Individual Contributors",
-        icon: "⚖️",
-        color: "#06b6d4",
-        outcomes: [
-          "Cross-functional project alignment without direct authority.",
-          "Faster promotion velocity to senior and lead roles.",
-          "High trust rating from lateral department heads."
-        ],
-        enablers: [
-          "GROW coaching model integration.",
-          "Stakeholder incentive mapping.",
-          "5 Whys root-cause problem solving."
-        ],
-        practices: [
-          "Consult key stakeholders individually before major decision meetings.",
-          "Block 2 hours of non-negotiable Quadrant 2 strategic deep work daily."
-        ],
-        recommendedBooks: [
-          { title: "Never Split the Difference", author: "Chris Voss", desc: "High-stakes negotiation & tactical empathy." },
-          { title: "Radical Candor", author: "Kim Scott", desc: "Care personally while challenging directly." }
-        ],
-        recommendedArticles: [
-          { title: "HBR: Influence Without Authority", url: "https://hbr.org/2008/01/how-to-influence-without-authority" },
-          { title: "The SCARF Model: Brain-Based Leadership", url: "https://neuroleadership.com/your-brain-at-work/scarf-model-defined" }
-        ],
-        recommendedVideos: [
-          { title: "The Power of Vulnerability & Empathy", speaker: "Brené Brown (TED)" }
-        ]
-      },
-      {
-        level: 4,
-        name: "Level 4: Transformational Leader",
-        stageTarget: "Managers, Directors & C-Suite Executives",
-        icon: "👑",
-        color: "#10b981",
-        outcomes: [
-          "High-performing team retention & psychological safety.",
-          "Seamless organizational change execution with minimal attrition.",
-          "Executive presence and gravitas across industry platforms."
-        ],
-        enablers: [
-          "Radical Candor feedback loops.",
-          "Crisis communication protocols.",
-          "Executive presence vocal/body language calibration."
-        ],
-        practices: [
-          "Publicly celebrate team members who highlight mistakes or dissenting views.",
-          "Conduct quarterly pre-mortems for all strategic initiatives."
-        ],
-        recommendedBooks: [
-          { title: "High Output Management", author: "Andrew Grove", desc: "The legendary Intel CEO guide to managerial leverage." },
-          { title: "The Fearless Organization", author: "Amy Edmondson", desc: "Creating psychological safety for learning & innovation." }
-        ],
-        recommendedArticles: [
-          { title: "HBR: What Makes a Leader?", url: "https://hbr.org/2004/01/what-makes-a-leader" },
-          { title: "Google's Project Aristotle: Building the Perfect Team", url: "https://rework.withgoogle.com/guides/understanding-team-effectiveness/" }
-        ],
-        recommendedVideos: [
-          { title: "First Secret of Design & Problem Solving: Notice!", speaker: "Tony Fadell (TED)" }
-        ]
       }
     ]
   },
 
-  // 7. BOOKS VAULT
+  // 8. BOOKS VAULT
   books: [
     {
       title: "Crucial Conversations: Tools for Talking When Stakes Are High",
@@ -1095,83 +825,12 @@ const SOFT_SKILLS_DATA = {
       summary: "Teaches actionable techniques to handle high-stakes conversations where opinions vary and emotions run strong.",
       keyTakeaways: [
         "Create Mutual Purpose: Ensure the other person knows you care about their goals.",
-        "Make it Safe: When people feel safe, they share candid truth; when threatened, they resort to silence or violence.",
-        "Master Your Stories: Separate observable facts from the story you tell yourself in your head."
-      ]
-    },
-    {
-      title: "Atomic Habits",
-      author: "James Clear",
-      category: "Personal Effectiveness",
-      coverColor: "#f59e0b",
-      icon: "⚡",
-      rating: "4.95 / 5.0",
-      summary: "The definitive guide to building good habits and breaking bad ones through 1% incremental daily improvements.",
-      keyTakeaways: [
-        "Focus on Systems over Goals: You do not rise to the level of your goals, you fall to the level of your systems.",
-        "Identity-Based Habits: Change who you believe you are ('I am a clear communicator').",
-        "The 4 Laws: Make it obvious, attractive, easy, and satisfying."
-      ]
-    },
-    {
-      title: "Emotional Intelligence 2.0",
-      author: "Travis Bradberry & Jean Greaves",
-      category: "Interpersonal & EQ",
-      coverColor: "#ec4899",
-      icon: "🫀",
-      rating: "4.8 / 5.0",
-      summary: "A step-by-step program to increase your EQ across 4 core skills: Self-Awareness, Self-Management, Social Awareness, and Relationship Management.",
-      keyTakeaways: [
-        "Count to 10 before reacting to high-stress triggers.",
-        "Greet people by name and observe non-verbal body language cues.",
-        "Align your posture and breathing to regulate internal emotion."
-      ]
-    },
-    {
-      title: "Never Split the Difference",
-      author: "Chris Voss",
-      category: "Negotiation & Influence",
-      coverColor: "#3b82f6",
-      icon: "⚖️",
-      rating: "4.9 / 5.0",
-      summary: "Former FBI lead international hostage negotiator reveals high-stakes negotiation tactics applicable to business & life.",
-      keyTakeaways: [
-        "Tactical Empathy: Use mirroring (repeating last 3 words) to build fast rapport.",
-        "Labeling: Name their negative emotions ('It seems like you feel ignored') to diffuse them.",
-        "Calibrated Questions: Ask 'How am I supposed to do that?' to make them solve your problem."
-      ]
-    },
-    {
-      title: "Radical Candor",
-      author: "Kim Scott",
-      category: "Leadership & Management",
-      coverColor: "#10b981",
-      icon: "👑",
-      rating: "4.85 / 5.0",
-      summary: "How to be a kick-ass boss without losing your humanity by balancing Caring Personally with Challenging Directly.",
-      keyTakeaways: [
-        "Radical Candor = Care Personally + Challenge Directly.",
-        "Avoid Ruinous Empathy (being nice but silent about real issues).",
-        "Give feedback immediately, in private, with specific actionable observations."
-      ]
-    },
-    {
-      title: "Mindset: The New Psychology of Success",
-      author: "Carol S. Dweck",
-      category: "Growth Mindset",
-      coverColor: "#8b5cf6",
-      icon: "🌱",
-      rating: "4.8 / 5.0",
-      summary: "Discovers how our belief about our capabilities (Fixed vs. Growth Mindset) dictates achievement and resilience.",
-      keyTakeaways: [
-        "Fixed Mindset believes talent is static; Growth Mindset believes skills develop through effort.",
-        "Embrace challenges as brain training.",
-        "Use the power of 'YET': 'I haven't mastered public speaking... YET.'"
+        "Make it Safe: When people feel safe, they share candid truth; when threatened, they resort to silence or violence."
       ]
     }
   ],
 
-  // 8. VIDEO HUB
+  // 9. VIDEO HUB
   videos: [
     {
       id: "vid-1",
@@ -1184,82 +843,23 @@ const SOFT_SKILLS_DATA = {
       thumbnail: "🗣️",
       keyPoints: [
         "Avoid the 7 Deadly Sins of Speaking: Gossip, Judging, Negativity, Dogmatism.",
-        "Use the HAIL framework: Honesty, Authenticity, Integrity, Love.",
-        "Master vocal register, timbre, prosody, pace, pitch, and volume."
-      ]
-    },
-    {
-      id: "vid-2",
-      title: "Your Body Language May Shape Who You Are",
-      speaker: "Amy Cuddy",
-      duration: "21:02 min",
-      platform: "TED Talk",
-      embedUrl: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
-      category: "Executive Presence",
-      thumbnail: "🧍",
-      keyPoints: [
-        "Power posing for 2 minutes can increase testosterone and lower cortisol.",
-        "Our non-verbals govern how other people think and feel about us.",
-        "Don't fake it till you make it; fake it till you BECOME it."
-      ]
-    },
-    {
-      id: "vid-3",
-      title: "The Power of Vulnerability & Empathy",
-      speaker: "Brené Brown",
-      duration: "20:19 min",
-      platform: "TED Talk",
-      embedUrl: "https://www.youtube.com/embed/iCvmsMzlF7o",
-      category: "Emotional Intelligence",
-      thumbnail: "❤️",
-      keyPoints: [
-        "Empathy fuels connection; sympathy drives disconnection.",
-        "Vulnerability is not weakness; it is our most accurate measure of courage.",
-        "To connect with someone, you must connect with something in yourself that knows that feeling."
-      ]
-    },
-    {
-      id: "vid-4",
-      title: "First Secret of Design & Problem Solving: Notice!",
-      speaker: "Tony Fadell",
-      duration: "16:40 min",
-      platform: "TED Talk",
-      embedUrl: "https://www.youtube.com/embed/9uOMjteDdhs",
-      category: "Cognitive Skills",
-      thumbnail: "🔍",
-      keyPoints: [
-        "Habituation blinds us to everyday friction and inefficiencies.",
-        "Look broader and look closer to question assumed constraints.",
-        "Stay young at heart: ask 'Why?' like a child."
+        "Use the HAIL framework: Honesty, Authenticity, Integrity, Love."
       ]
     }
   ],
 
-  // 9. DAILY HABITS
+  // 10. DAILY HABITS
   dailyHabits: [
     { id: "h1", text: "Practice 3-Second Pause before responding in any conversation today", category: "EQ" },
-    { id: "h2", text: "Give 1 specific, non-generic piece of positive praise to a peer", category: "Communication" },
-    { id: "h3", text: "Identify 1 urgent task vs 1 truly important task using Eisenhower Matrix", category: "Prioritization" },
-    { id: "h4", text: "Reframe 1 mistake today using the Growth Mindset ('What did I learn?')", category: "Resilience" },
-    { id: "h5", text: "Paraphrase what someone said ('What I hear is...') before giving your input", category: "Active Listening" }
+    { id: "h2", text: "Give 1 specific, non-generic piece of positive praise to a peer", category: "Communication" }
   ],
 
-  // 10. TEMPLATES
+  // 11. TEMPLATES
   templates: [
     {
       title: "1-on-1 Meeting Agenda Template",
       category: "Leadership",
       content: `### 1-on-1 Meeting Structure (30 Mins)\n1. Check-in & Wins (5 mins): What went well this week? How are your energy levels?\n2. Mentee / Employee Priorities (15 mins): What is top of mind for you? Where are you blocked?\n3. Manager Feedback & Coaching (5 mins): SBI Feedback or strategic context updates.\n4. Action Items & Commitments (5 mins): Who does what by when?`
-    },
-    {
-      title: "Elevator Pitch Structure (30 Seconds)",
-      category: "Communication",
-      content: `### 30-Second Elevator Pitch\n1. Hook: "Did you know that [surprising stat / challenge]?"\n2. Solution / Expertise: "I specialize in [your core skill/value proposition]."\n3. Impact: "Recently, I helped [project/team] achieve [measurable result]."\n4. Call to Action: "I'd love to grab 5 minutes to explore how we might collaborate on [topic]."`
-    },
-    {
-      title: "Difficult Feedback Script (SBI Model)",
-      category: "Conflict Resolution",
-      content: `### SBI Feedback Script\n- Situation: "During yesterday's client presentation..."\n- Behavior: "...when you stepped in and changed the slide deck mid-presentation..."\n- Impact: "...it created confusion for the client and undermined our team's preparation."\n- Next Steps: "Moving forward, how can we align on slide adjustments prior to client calls?"`
     }
   ]
 };

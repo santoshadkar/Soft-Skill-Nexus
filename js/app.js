@@ -1,8 +1,8 @@
-// SoftSkills Nexus - Upgraded Main Controller
+// SoftSkills Nexus - Main Controller with Homepage Integration
 
 class SoftSkillsApp {
   constructor() {
-    this.activeTab = 'pathways';
+    this.activeTab = 'home';
     this.activePathwayId = 'school';
     this.init();
   }
@@ -25,18 +25,28 @@ class SoftSkillsApp {
       btn.addEventListener('click', (e) => {
         const targetTab = btn.getAttribute('data-tab');
         if (!targetTab) return;
-
-        tabBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-        const targetContent = document.getElementById(`tab-${targetTab}`);
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
-        this.activeTab = targetTab;
+        this.navigateToTab(targetTab);
       });
     });
+  }
+
+  navigateToTab(tabName) {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(b => {
+      if (b.getAttribute('data-tab') === tabName) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+    const targetContent = document.getElementById(`tab-${tabName}`);
+    if (targetContent) {
+      targetContent.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    this.activeTab = tabName;
   }
 
   // 1. Render Pathways Section (with IQ, EQ & SQ Triad)
@@ -290,7 +300,7 @@ class SoftSkillsApp {
     if (modalBody) modalBody.innerHTML = '';
   }
 
-  // 3. Render Career Elevation Roadmap (with Curated Books & Articles)
+  // 3. Render Career Elevation Roadmap
   renderRoadmap() {
     const container = document.getElementById('roadmap-content-display');
     if (!container) return;

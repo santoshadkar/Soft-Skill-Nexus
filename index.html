@@ -19,13 +19,16 @@
 
   <!-- Top Global Navbar -->
   <nav class="navbar">
-    <a href="#" class="brand">
+    <a href="#" class="brand" onclick="window.nexusApp.navigateToTab('home')">
       <div class="brand-icon">🌱</div>
       <div>SoftSkills<span class="highlight">Nexus</span></div>
     </a>
 
     <div class="nav-tabs">
-      <button class="tab-btn active" data-tab="pathways">
+      <button class="tab-btn active" data-tab="home">
+        <span>🏠</span> Home
+      </button>
+      <button class="tab-btn" data-tab="pathways">
         <span>🧭</span> Stage Pathways
       </button>
       <button class="tab-btn" data-tab="ai-coach">
@@ -50,7 +53,7 @@
         <span>📚</span> Books & Videos
       </button>
       <button class="tab-btn" data-tab="habits">
-        <span>⚡</span> Daily Micro-Habits
+        <span>⚡</span> Daily Habits
       </button>
     </div>
   </nav>
@@ -58,26 +61,163 @@
   <!-- Main Content Container -->
   <main class="app-container">
 
-    <!-- 1. STAGE PATHWAYS TAB -->
-    <section id="tab-pathways" class="tab-content active">
+    <!-- 0. DEDICATED LANDING HOMEPAGE TAB -->
+    <section id="tab-home" class="tab-content active">
       <div class="hero-section">
-        <span class="badge" style="background: rgba(99,102,241,0.2); color: var(--primary); margin-bottom: 0.75rem;">
-          Universal Soft Skills Mastery & Elevation
+        <span class="badge" style="background: rgba(99,102,241,0.2); color: var(--primary); margin-bottom: 0.8rem; font-size: 0.85rem;">
+          ✨ Welcome to SoftSkills Nexus
         </span>
-        <h1 class="hero-title">Elevate Your Soft Skills from <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">School to C-Suite</span></h1>
+        <h1 class="hero-title">The Human Advantage: Why Soft Skills Dictate <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">85% of Success</span> in the AI Era</h1>
         <p class="hero-subtitle">
-          Master the human abilities that AI cannot replace: empathetic communication, critical decision-making, executive influence, and personal resilience tailored to your exact career lifecycle stage.
+          Technical knowledge opens the door, but soft skills—empathy, active listening, conflict resolution, and executive presence—determine how high you rise from school K-12 to C-Suite leadership.
         </p>
         <div class="hero-actions">
-          <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\'ai-coach\']').click()">
-            🤖 Ask Live AI Soft Skills Coach
+          <button class="btn btn-primary" onclick="window.nexusApp.navigateToTab('quiz')">
+            🎯 Take 15-Point Diagnostic Quiz
           </button>
-          <button class="btn btn-secondary" onclick="document.querySelector('[data-tab=\'roleplay-hub\']').click()">
-            🎭 Practice Interactive Role Plays ➔
+          <button class="btn btn-secondary" onclick="window.nexusApp.navigateToTab('ai-coach')">
+            🤖 Talk to Live AI Coach
+          </button>
+          <button class="btn btn-secondary" onclick="window.nexusApp.navigateToTab('pathways')">
+            🧭 Explore Stage Pathways ➔
           </button>
         </div>
       </div>
 
+      <!-- EMPIRICAL RESEARCH & IMPACT STAT GRID -->
+      <div class="grid-3" style="margin-bottom: 3.5rem;">
+        <div class="card" style="border-top: 4px solid var(--primary); background: linear-gradient(180deg, rgba(99, 102, 241, 0.08), rgba(18, 24, 38, 0.8));">
+          <div style="font-size: 2.8rem; font-weight: 900; color: var(--primary); line-height: 1;">85%</div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0 0.3rem 0;">Career Success Factor</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Research by Harvard University, Carnegie Foundation, and Stanford Research Center proves that <strong>85% of job success comes from well-developed soft & people skills</strong>, and only 15% from technical skills.
+          </p>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--accent-cyan); background: linear-gradient(180deg, rgba(6, 182, 212, 0.08), rgba(18, 24, 38, 0.8));">
+          <div style="font-size: 2.8rem; font-weight: 900; color: var(--accent-cyan); line-height: 1;">AI Paradox</div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0 0.3rem 0;">The Irreplaceable Superpower</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            As AI automates code, writing, and data analysis, human emotional intelligence (EQ), ethical stewardship (SQ), and strategic negotiation become your ultimate career differentiator.
+          </p>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--accent-emerald); background: linear-gradient(180deg, rgba(16, 185, 129, 0.08), rgba(18, 24, 38, 0.8));">
+          <div style="font-size: 2.8rem; font-weight: 900; color: var(--accent-emerald); line-height: 1;">K12 ➔ Exec</div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0 0.3rem 0;">Lifelong Mastery Journey</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Soft skills are not fixed traits—they are trainable muscles. SoftSkills Nexus delivers stage-specific frameworks tailored for primary students, university graduates, and C-Suite leaders.
+          </p>
+        </div>
+      </div>
+
+      <!-- WHY SOFT SKILLS MATTER ACROSS LIFE STAGES -->
+      <div class="section-header">
+        <h2 class="section-title">🌱 Why Soft Skills Dictate Impact in Every Life Stage</h2>
+        <p class="section-desc">Discover how mastering human interaction transforms performance at every milestone:</p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 3.5rem;">
+        <div class="skill-list-item" style="border-left: 4px solid #3b82f6;">
+          <div class="card-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">🎒</div>
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">School & K-12 Foundation</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              Builds early confidence, active listening, homework focus routines, and growth mindset self-talk ('I haven't mastered this YET'). Prevents peer anxiety and bullying.
+            </p>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
+              Explore School Track ➔
+            </button>
+          </div>
+        </div>
+
+        <div class="skill-list-item" style="border-left: 4px solid #8b5cf6;">
+          <div class="card-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">🎓</div>
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">University & College Scholars</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              Differentiates job candidates in interviews through STAR method storytelling, public speaking confidence, and value-first networking etiquette.
+            </p>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
+              Explore College Track ➔
+            </button>
+          </div>
+        </div>
+
+        <div class="skill-list-item" style="border-left: 4px solid #06b6d4;">
+          <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">💼</div>
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Early & Mid-Career Professionals</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              Accelerates promotion velocity through executive communication (BLUF), emotional self-regulation, SBI feedback loops, and cross-functional alignment.
+            </p>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
+              Explore Professional Track ➔
+            </button>
+          </div>
+        </div>
+
+        <div class="skill-list-item" style="border-left: 4px solid #10b981;">
+          <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">👑</div>
+          <div>
+            <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Corporate Leaders & Executives</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              Cultivates executive presence, GROW model mentorship, psychological safety, and authentic values-based leadership during organizational change.
+            </p>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.82rem;" onclick="window.nexusApp.navigateToTab('pathways')">
+              Explore Executive Track ➔
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW SOFTSKILLS NEXUS HELPS YOU SUCCEED -->
+      <div class="section-header">
+        <h2 class="section-title">🚀 How SoftSkills Nexus Empowers Your Journey</h2>
+        <p class="section-desc">Explore our single-stop suite of interactive tools, diagnostic tests, AI coaching, and case studies:</p>
+      </div>
+
+      <div class="grid-4" style="margin-bottom: 3rem;">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤖</div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Live AI Coach</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Get real-time answers, feedback scripts, and soft skills advice tailored to your situations.</p>
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.nexusApp.navigateToTab('ai-coach')">
+            Ask AI Coach ➔
+          </button>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎭</div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Role Plays Hub</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Practice high-stakes workplace dialogues with real-time feedback and score debriefs.</p>
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.nexusApp.navigateToTab('roleplay-hub')">
+            Practice Roleplays ➔
+          </button>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📖</div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">Case Studies Vault</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Analyze real-world organizational friction points and reveal expert model answers.</p>
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.nexusApp.navigateToTab('cases')">
+            Read Case Studies ➔
+          </button>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">15-Point Diagnostic</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Assess your baseline across 5 core pillars and get a custom 30-day action plan.</p>
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.nexusApp.navigateToTab('quiz')">
+            Start Diagnostic ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. STAGE PATHWAYS TAB -->
+    <section id="tab-pathways" class="tab-content">
       <div class="section-header">
         <h2 class="section-title">🎓 Choose Your Lifecycle Stage</h2>
         <p class="section-desc">Select your current stage to explore curated soft skills, IQ/EQ/SQ triad strategies, word-for-word scripts, and action habits:</p>
